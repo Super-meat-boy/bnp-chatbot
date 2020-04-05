@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9b15c2d-eaa8-43e0-8adb-a3bc356dafbb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,6 +46,16 @@
     <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.standard" value="" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RunManager">
+    <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="start" />
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -74,10 +83,38 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1512" y="362" key="#ESLint/0.0.2560.1400@0.0.2560.1400" timestamp="1586022054536" />
+    <state x="814" y="397" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586106524456">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="814" y="397" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1586106524456" />
+    <state x="927" y="167" width="1289" height="1165" key="DiffContextDialog" timestamp="1586110116344">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="927" y="167" width="1289" height="1165" key="DiffContextDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1586110116344" />
     <state x="1037" y="609" key="Github.ShareDialog" timestamp="1586101672561">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1037" y="609" key="Github.ShareDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1586101672561" />
+    <state width="1431" height="387" key="GridCell.Tab.0.bottom" timestamp="1586109698326">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1431" height="387" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1586109698326" />
+    <state width="1431" height="387" key="GridCell.Tab.0.center" timestamp="1586109698326">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1431" height="387" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1586109698326" />
+    <state width="1431" height="387" key="GridCell.Tab.0.left" timestamp="1586109698325">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1431" height="387" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1586109698325" />
+    <state width="1431" height="387" key="GridCell.Tab.0.right" timestamp="1586109698326">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1431" height="387" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1586109698326" />
+    <state x="405" y="160" width="1289" height="1165" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1586110116345">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="405" y="160" width="1289" height="1165" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1586110116345" />
     <state x="1616" y="528" key="com.intellij.ide.util.TipDialog" timestamp="1586021768512">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
