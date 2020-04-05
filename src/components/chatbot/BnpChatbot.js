@@ -34,7 +34,6 @@ function calculateAge(birthday) { // birthday is a date
 //     return <div>conversation non terminado</div>
 // }
 
-
 export default class BnpChatbot extends React.Component {
 
     constructor(props) {
@@ -45,7 +44,6 @@ export default class BnpChatbot extends React.Component {
 
 
     handleEnd({steps, values}) {
-
         this.state.gender = `${values[0]}`;
         this.state.name = `${values[1]}`;
         this.state.birth = `${values[2]}`;

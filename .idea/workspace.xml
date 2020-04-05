@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a9b15c2d-eaa8-43e0-8adb-a3bc356dafbb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/chatbot/BnpChatbot.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/chatbot/BnpChatbot.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,22 +96,22 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1037" y="609" key="Github.ShareDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1586101672561" />
-    <state width="1431" height="387" key="GridCell.Tab.0.bottom" timestamp="1586109698326">
+    <state width="1431" height="387" key="GridCell.Tab.0.bottom" timestamp="1586111317296">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1431" height="387" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1586109698326" />
-    <state width="1431" height="387" key="GridCell.Tab.0.center" timestamp="1586109698326">
+    <state width="1431" height="387" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1586111317296" />
+    <state width="1431" height="387" key="GridCell.Tab.0.center" timestamp="1586111317295">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1431" height="387" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1586109698326" />
-    <state width="1431" height="387" key="GridCell.Tab.0.left" timestamp="1586109698325">
+    <state width="1431" height="387" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1586111317295" />
+    <state width="1431" height="387" key="GridCell.Tab.0.left" timestamp="1586111317295">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1431" height="387" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1586109698325" />
-    <state width="1431" height="387" key="GridCell.Tab.0.right" timestamp="1586109698326">
+    <state width="1431" height="387" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1586111317295" />
+    <state width="1431" height="387" key="GridCell.Tab.0.right" timestamp="1586111317295">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1431" height="387" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1586109698326" />
+    <state width="1431" height="387" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1586111317295" />
     <state x="405" y="160" width="1289" height="1165" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1586110116345">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
