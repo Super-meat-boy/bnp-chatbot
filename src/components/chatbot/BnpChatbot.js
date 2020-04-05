@@ -18,21 +18,10 @@ function calculateAge(birthday) { // birthday is a date
     const today = new Date();
     const birthDate = new Date(birthday);
     let age = today.getFullYear() - birthDate.getFullYear();
-    let m = today.getMonth() - birthDate.getMonth();
-    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-        age--;
-        console.log(age);
+            console.log(age);
         return age;
     }
-}
-//
-// function Greeting(state) {
-//     state = this.setState({chatEnded: true});
-//     if (state) {
-//         return <div>conversation terminée</div>
-//     }
-//     return <div>conversation non terminado</div>
-// }
+
 
 export default class BnpChatbot extends React.Component {
 
@@ -40,29 +29,28 @@ export default class BnpChatbot extends React.Component {
         super(props);
         this.handleEnd = this.handleEnd.bind(this);
         this.state = {
-            chatEnded: false,
-            gender: '',
-            name: '',
-            birth: ''
-        };
+            values: []
+        }
     }
 
 
     handleEnd({steps, values}) {
 
-        this.setState({gender: `${values[0]}`});
-        this.setState({name: `${values[1]}`});
-        this.setState({birth: `${values[2]}`});
-        this.setState({chatEnded: true});
-
-
-        console.log(this.state.name);
-        console.log(this.state.gender);
-        console.log(this.state.birth);
-
-        console.log(steps)
+        console.log(values)
     }
 
+    handleValue(value) {
+        let prevState = this.state.values;
+        prevState.push(value);
+        this.setState({
+            values: prevState
+        });
+        console.log(this.state.values);
+    }
+
+    handleRecap() {
+        return `Merci ${this.state.values[0]}  ${this.state.values[1]}, vous êtes ${this.state.majeur} `;
+    }
 
     render() {
 
@@ -86,7 +74,6 @@ export default class BnpChatbot extends React.Component {
             userFontColor: '#fff',
         };
 
-
         const steps = [
                 {
                     id: "Greet",
@@ -101,23 +88,39 @@ export default class BnpChatbot extends React.Component {
                 {
                     id: "gender",
                     options: [
-                        {value: "Homme", label: "Homme", trigger: "Ask Name"},
-                        {value: "Femme", label: "Femme", trigger: "Ask Name"}
+                        {
+                            value: "Monsieur", label: "Homme", trigger: ({value}) => {
+                                this.handleValue(value);
+                                return 'Ask Name Male'
+                            }
+                        },
+                        {
+                            value: "Madame", label: "Femme", trigger: ({value}) => {
+                                this.handleValue(value);
+                                return 'Ask Name Female'
+                            }
+                        }
                     ]
                 },
                 {
-                    id: "Ask Name",
+                    id: "Ask Name Male",
+                    message: "Merci, quel est votre prénom",
+                    trigger: "name"
+                },
+
+                {
+                    id: "Ask Name Female",
                     message: "Merci, quel est votre prénom",
                     trigger: "name"
                 },
                 {
                     id: "name",
                     user: true,
-
                     validator: (value) => {
                         if (!value) {
                             return 'veuillez saisir votre prénom';
                         }
+                        this.handleValue(value);
                         return true;
                     },
                     trigger: "Personalize Greetings"
@@ -132,52 +135,48 @@ export default class BnpChatbot extends React.Component {
                     message: "Quelle est votre date de naissance ?",
                     trigger: "Waiting for birthdate input"
                 },
-
                 {
                     id: "Waiting for birthdate input",
                     placeholder: "format dd.mm.yyyy souhaité",
                     user: true,
-
                     validator: (value) => {
 
                         if (checkDateValidity(value)) {
                             this.state.age = calculateAge(value);
                             if (this.state.age >= 18) {
-                                this.state.majeur = true;
-                                console.log('is it majeur : ' + this.state.majeur)
+                                this.state.majeur = 'majeur';
+                                console.log(this.state.age);
                             } else {
-                                this.state.majeur = false;
-                                console.log('is it majeur : ' + this.state.majeur)
+                                this.state.majeur = 'mineur';
+                                console.log(this.state.age);
                             }
                             return true;
                         }
                         return 'invalid date';
                     },
 
-                    trigger: 'recap',
+                    trigger: ({value}) => {
+                        this.handleValue(value);
+                        return 'recap'
+                    }
                 },
-
                 {
                     id: 'recap',
-                    message: 'Ici il faudrait pouvoir dire, Merci Monsieur ou Madame + Prénom vous êtes majeur /mineur',
-                    trigger: 'Done'
-
+                    message: () => this.handleRecap(),
+                    trigger: 'done'
                 },
-
                 {
-                    id: 'Done',
-                    message: 'Ciao',
+                    id: 'done',
+                    message: 'A bientôt',
                     end: true,
                 },
-
             ]
         ;
-
 
         return <div>
             <ThemeProvider theme={theme}>
                 <ChatBot steps={steps} {...config} handleEnd={this.handleEnd} botAvatar={image.url}/>
-           </ThemeProvider>
+            </ThemeProvider>
         </div>
 
     }
