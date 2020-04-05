@@ -26,13 +26,13 @@ function calculateAge(birthday) { // birthday is a date
     }
 }
 
-function Greeting(state) {
-    const chatEnded = this.state.chatEnded;
-    if (chatEnded) {
-        return <div>conversation terminée</div>
-    }
-    return <div>conversation non terminado</div>
-}
+// function Greeting(state) {
+//     const chatEnded = this.state.chatEnded;
+//     if (chatEnded) {
+//         return <div>conversation terminée</div>
+//     }
+//     return <div>conversation non terminado</div>
+// }
 
 
 export default class BnpChatbot extends React.Component {
@@ -40,7 +40,7 @@ export default class BnpChatbot extends React.Component {
     constructor(props) {
         super(props);
         this.handleEnd = this.handleEnd.bind(this);
-        this.state = {};
+        this.state = {chatEnded: false};
     }
 
 
@@ -111,6 +111,13 @@ export default class BnpChatbot extends React.Component {
                 {
                     id: "name",
                     user: true,
+
+                    validator: (value) => {
+                        if (!value) {
+                            return 'veuillez saisir votre prénom';
+                        }
+                        return true;
+                    },
                     trigger: "Personalize Greetings"
                 },
                 {
