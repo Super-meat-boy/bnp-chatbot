@@ -25,10 +25,10 @@ function calculateAge(birthday) { // birthday is a date
         return age;
     }
 }
-
+//
 // function Greeting(state) {
-//     const chatEnded = this.state.chatEnded;
-//     if (chatEnded) {
+//     state = this.setState({chatEnded: true});
+//     if (state) {
 //         return <div>conversation terminée</div>
 //     }
 //     return <div>conversation non terminado</div>
@@ -39,23 +39,27 @@ export default class BnpChatbot extends React.Component {
     constructor(props) {
         super(props);
         this.handleEnd = this.handleEnd.bind(this);
-        this.state = {chatEnded: false};
+        this.state = {
+            chatEnded: false,
+            gender: '',
+            name: '',
+            birth: ''
+        };
     }
 
 
     handleEnd({steps, values}) {
-        this.state.gender = `${values[0]}`;
-        this.state.name = `${values[1]}`;
-        this.state.birth = `${values[2]}`;
+
+        this.setState({gender: `${values[0]}`});
+        this.setState({name: `${values[1]}`});
+        this.setState({birth: `${values[2]}`});
+        this.setState({chatEnded: true});
+
+
         console.log(this.state.name);
         console.log(this.state.gender);
         console.log(this.state.birth);
-        let entry = {
-            id: 'Done',
-            message: 'il se passe un truc ?',
-            trigger: 'recap'
-        };
-        steps.push(entry);
+
         console.log(steps)
     }
 
@@ -155,7 +159,7 @@ export default class BnpChatbot extends React.Component {
 
                 {
                     id: 'recap',
-                    message: "Merci {state.gender} {state.name}, vous êtes ({this.state.majeur} ? \"majeur\":\"mineur\")} ",
+                    message: 'Ici il faudrait pouvoir dire, Merci Monsieur ou Madame + Prénom vous êtes majeur /mineur',
                     trigger: 'Done'
 
                 },
@@ -173,7 +177,7 @@ export default class BnpChatbot extends React.Component {
         return <div>
             <ThemeProvider theme={theme}>
                 <ChatBot steps={steps} {...config} handleEnd={this.handleEnd} botAvatar={image.url}/>
-            </ThemeProvider>
+           </ThemeProvider>
         </div>
 
     }
