@@ -23,6 +23,14 @@ function calculateAge(birthday) { // birthday is a date
     }
 
 
+
+
+
+
+
+
+
+
 export default class BnpChatbot extends React.Component {
 
     constructor(props) {
