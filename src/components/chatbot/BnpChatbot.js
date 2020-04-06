@@ -18,17 +18,12 @@ function calculateAge(birthday) { // birthday is a date
     const today = new Date();
     const birthDate = new Date(birthday);
     let age = today.getFullYear() - birthDate.getFullYear();
-            console.log(age);
+    let m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+    }
         return age;
     }
-
-
-
-
-
-
-
-
 
 
 export default class BnpChatbot extends React.Component {
@@ -53,7 +48,6 @@ export default class BnpChatbot extends React.Component {
         this.setState({
             values: prevState
         });
-        console.log(this.state.values);
     }
 
     handleRecap() {
@@ -153,10 +147,8 @@ export default class BnpChatbot extends React.Component {
                             this.state.age = calculateAge(value);
                             if (this.state.age >= 18) {
                                 this.state.majeur = 'majeur';
-                                console.log(this.state.age);
                             } else {
                                 this.state.majeur = 'mineur';
-                                console.log(this.state.age);
                             }
                             return true;
                         }
