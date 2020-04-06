@@ -38,9 +38,7 @@ export default class BnpChatbot extends React.Component {
 
 
     handleEnd({steps, values}) {
-
-        console.log(values)
-    }
+            }
 
     handleValue(value) {
         let prevState = this.state.values;
