@@ -15,11 +15,12 @@ function checkDateValidity(value) {
 
 function calculateAge(birthday) { // birthday is a date
 
-    const today = new Date();
-    const birthDate = new Date(birthday);
-    let age = today.getFullYear() - birthDate.getFullYear();
-    let m = today.getMonth() - birthDate.getMonth();
-    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+    const today = new moment();
+    const birthDate = moment(birthday,"DD-MM-YYYY");
+
+    let age = today.year() - birthDate.year();
+    let m = today.month() - birthDate.month();
+    if (m < 0 || (m === 0 && today.date() < birthDate.date())) {
         age--;
     }
         return age;
